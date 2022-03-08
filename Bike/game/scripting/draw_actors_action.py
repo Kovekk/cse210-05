@@ -9,15 +9,10 @@ class DrawActorsAction(Action):
     
     def execute(self, cast, script):
 
-        score = cast.get_first_actor('scores')
-        food = cast.get_first_actor("foods")
-        snake = cast.get_first_actor("snakes")
-        segments = snake.get_segments()
-        messages = cast.get_actors('messages')
+        trail = cast.get_first_actor('trails')
+        bike = cast.get_first_actor("bikes")
 
         self._video_service.clear_buffer()
-        self._video_service.draw_actor(food)
-        self._video_service.draw_actors(segments)
-        self._video_service.draw_actor(score)
-        self._video_service.draw_actors(messages, True)
+        self._video_service.draw_actor(bike)
+        self._video_service.draw_actors(trail)
         self._video_service.flush_buffer()
