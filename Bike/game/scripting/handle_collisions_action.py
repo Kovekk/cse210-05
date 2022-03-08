@@ -3,7 +3,7 @@ from game.casting.actor import Actor
 from game.scripting.action import Action
 from game.shared.point import Point
 
-class HandleCollisionAction(Action):
+class HandleCollisionsAction(Action):
 
     def __init__(self):
 
