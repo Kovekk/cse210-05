@@ -1,8 +1,6 @@
 import constants
 from game.casting.actor import Actor
 from game.shared.point import Point
-
-
 class Bike(Actor):
 
     def __init__(self):
