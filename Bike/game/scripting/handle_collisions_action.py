@@ -13,4 +13,8 @@ class HandleCollisionsAction(Action):
     def execute(self, cast, script):
 
         if not self._is_game_over:
-            self._handle
+            self._handle_p1_collision(self, cast)
+            self._handle_p2_collision(self, cast)
+
+
+    
