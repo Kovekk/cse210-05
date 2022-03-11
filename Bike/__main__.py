@@ -19,7 +19,7 @@ def main():
     # create the cast
     cast = Cast()
     cast.add_actor("bikes", Bike())
-    cast.add_actor("bikes", Bike())
+    cast.add_actor("trails", Bike())
    
     # start the game
     keyboard_service = KeyboardService()

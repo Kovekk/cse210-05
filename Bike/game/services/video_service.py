@@ -37,7 +37,7 @@ class VideoService:
         pyray.draw_text(text, x, y, font_size, color)
 
     
-    def draw_actor(self, actors, centered=False):
+    def draw_actors(self, actors, centered=False):
 
         for actor in actors:
             self.draw_actor(actor, centered)

@@ -18,8 +18,8 @@ class HandleCollisionsAction(Action):
 
     def _handle_segment_collision(self, cast, script):
         segments = cast.get_actors("segments")
-        bike_one = cast.get_actors("bikes", "player_one")
-        bike_two = cast.get_actors("bikes", "player_two")
+        bike_one = cast.get_actors("bikes")
+        bike_two = cast.get_actors("bikes")
         
         for segment in segments:
             if segment.get_position().equals(bike_one.get_position()):
@@ -36,8 +36,8 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
         """
         if self._is_game_over:
-            bike_one = cast.get_actor("bikes", "bike_one")
-            bike_two = cast.get_actor("bikes", "bike_two")
+            bike_one = cast.get_actors("bikes")
+            bike_two = cast.get_actors("bikes")
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
