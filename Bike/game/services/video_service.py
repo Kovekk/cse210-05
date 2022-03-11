@@ -16,7 +16,7 @@ class VideoService:
     def clear_buffer(self):
 
         pyray.begin_drawing()
-        pyray.clear_background
+        pyray.clear_background(pyray.BLACK)
         if self._debug == True:
             self._draw_grid()
 

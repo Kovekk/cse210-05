@@ -1,3 +1,4 @@
+from game.scripting.spawn_trail_action import SpawnTrailAction
 class Director:
     """A person who directs the game. 
     
@@ -16,6 +17,7 @@ class Director:
         self._video_service = video_service
         
     def start_game(self, cast, script):
+        trail = SpawnTrailAction()
         """Starts the game using the given cast and script. Runs the main game loop.
 
         Args:
