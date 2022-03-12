@@ -22,6 +22,7 @@ def main():
     cast = Cast()
     cast.add_actor("bikes", Bike())
     cast.add_actor("trails", Bike())
+    cast.add_actor("bikesp2", Bike())
     trail = SpawnTrailAction()
    
     # start the game

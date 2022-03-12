@@ -8,6 +8,10 @@ class Bike(Actor):
         self._segments = []
         self._prepare_bike()
 
+    
+    def get_segments(self):
+        return self._segments
+
     def move_next(self):
         for segment in self._segments:
             segment.move_next()
@@ -33,8 +37,8 @@ class Bike(Actor):
         for i in range(constants.BIKE_LENGTH):
             position = Point(x - i * constants.CELL_SIZE, y)
             velocity = Point(1 * constants.CELL_SIZE, 0)
-            text = '8'
-            color = constants.YELLOW
+            text = '8' if i == 0 else '#'
+            color = constants.YELLOW if i == 0 else constants.GREEN
 
             bike = Actor()
             bike.set_position(position)
