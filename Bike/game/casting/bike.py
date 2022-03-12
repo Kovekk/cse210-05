@@ -1,29 +1,30 @@
 import constants
 from game.casting.actor import Actor
 from game.shared.point import Point
+
 class Bike(Actor):
 
     def __init__(self):
         super().__init__()
         self._segments = []
-        self._prepare_bike()
+        # self._prepare_bike()
 
-    def move_next(self):
-        for segment in self._segments:
-            segment.move_next()
+    # def move_next(self):
+    #     for segment in self._segments:
+    #         segment.move_next()
         
-        for i in range(len(self._segments) - 1, 0, -1):
-            trailing = self._segments[i]
-            previous = self._segments[i - 1]
-            velocity = previous.get_velocity()
-            trailing.set_velocity(velocity)
+    #     for i in range(len(self._segments) - 1, 0, -1):
+    #         trailing = self._segments[i]
+    #         previous = self._segments[i - 1]
+    #         velocity = previous.get_velocity()
+    #         trailing.set_velocity(velocity)
    
     def get_bike(self):
         return self._segments[0]
 
     
     def turn_bike(self, velocity):
-        self._segments[0].set_velocity(velocity)
+        self.set_velocity(velocity)
 
     
     def _prepare_bike(self):
@@ -41,4 +42,4 @@ class Bike(Actor):
             bike.set_velocity(velocity)
             bike.set_text(text)
             bike.set_color(color)
-            self._segments.append(bike)
+            

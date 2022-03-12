@@ -7,7 +7,7 @@ class ControlActorsActionP2(Action):
     def __init__(self, keyboard_service):
 
         self._keyboard_service = keyboard_service
-        self._direction = Point(constants.CELL_SIZE, 0)
+        self._direction = Point(0, constants.CELL_SIZE)
 
 
     def execute(self, cast, script):
@@ -28,5 +28,5 @@ class ControlActorsActionP2(Action):
         if self._keyboard_service.is_key_down('k'):
             self._direction = Point(0, constants.CELL_SIZE)
 
-        bike = cast.get_first_actor('bikes')
+        bike = cast.get_first_actor('bike_two')
         bike.turn_bike(self._direction)    
