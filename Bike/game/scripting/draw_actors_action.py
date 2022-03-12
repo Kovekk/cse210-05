@@ -9,12 +9,14 @@ class DrawActorsAction(Action):
     
     def execute(self, cast, script):
 
-        trail = cast.get_first_actor("trails")
-        bike = cast.get_first_actor("bikes")
-        bikep2 = cast.get_first_actor("bikesp2")
+        trail = cast.get_actors("trails")
+        bike_one = cast.get_first_actor("bike_one")
+        bike_two = cast.get_first_actor("bike_two")
+        messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()
-        self._video_service.draw_actor(bike)
-        self._video_service.draw_actor(bikep2)
-        self._video_service.draw_actor(trail)
+        self._video_service.draw_actor(bike_one)
+        self._video_service.draw_actor(bike_two)
+        self._video_service.draw_actors(trail)
+        self._video_service.draw_actors(messages)
         self._video_service.flush_buffer()

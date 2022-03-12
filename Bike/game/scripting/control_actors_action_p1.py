@@ -2,7 +2,7 @@ import constants
 from game.scripting.action import Action
 from game.shared.point import Point
 
-class ControlActorsActionP2(Action):
+class ControlActorsActionP1(Action):
 
     def __init__(self, keyboard_service):
 
@@ -12,21 +12,22 @@ class ControlActorsActionP2(Action):
 
     def execute(self, cast, script):
         
-        #player 2 left
-        if self._keyboard_service.is_key_down('j'):
+        #player 1 left
+        if self._keyboard_service.is_key_down('a'):
             self._direction = Point(-constants.CELL_SIZE, 0)
 
-        #player 2 right
-        if self._keyboard_service.is_key_down('l'):
+        #player 1 right
+        if self._keyboard_service.is_key_down('d'):
             self._direction = Point(constants.CELL_SIZE, 0)
 
-        #player 2 up
-        if self._keyboard_service.is_key_down('i'):
+        #player 1 up
+        if self._keyboard_service.is_key_down('w'):
             self._direction = Point(0, -constants.CELL_SIZE)
 
-        #player 2 down
-        if self._keyboard_service.is_key_down('k'):
+        #player 1 down
+        if self._keyboard_service.is_key_down('s'):
             self._direction = Point(0, constants.CELL_SIZE)
 
-        bike = cast.get_first_actor('bike_two')
-        bike.turn_bike(self._direction)    
+        bike = cast.get_first_actor('bike_one')
+        bike.turn_bike(self._direction)
+

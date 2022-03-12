@@ -6,8 +6,9 @@ class SpawnTrailAction(Action):
 
     def execute(self, cast, script):
 
-        actors = cast.get_all_actors()
-        bikes = actors.get_actors("bikes")
+        bike_one = cast.get_first_actor("bike_one")
+        bike_two = cast.get_first_actor("bike_two")
+        bikes = [bike_one, bike_two]
 
         for bike in bikes:
             position = bike.get_position()
